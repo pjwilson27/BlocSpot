@@ -28,6 +28,20 @@ var albumPicasso = {
      ]
  };
 
+var albumTheThirds = {
+    title: 'The Third',
+    artist: 'Apple',
+    label: 'Jobs Mafia',
+    year: '2016',
+    albumArtUrl: 'assets/images/jobs.jpg',
+    songs: [
+         { title: 'Back like a Mac', duration: '2:01' },
+         { title: 'MicroSAWFT', duration: '3:27' },
+         { title: 'Beep Boop?', duration: '2:11' },
+         { title: 'Another Apple Joke Here', duration: '4:29' }
+    ]
+}
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
         '<tr class="album-view-song-item">'
@@ -39,14 +53,21 @@ var createSongRow = function(songNumber, songName, songLength) {
     
     return template;
 }
-
-var setCurrentAlbum = function(album) {
-    //#1
-    var albumTitle = document.getElementsByClassName('album-view-title') [0];
+    
+var albumTitle = document.getElementsByClassName('album-view-title') [0];
     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
     var albumImage = document.getElementsByClassName('album-cover-art')[0];
     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
+
+var setCurrentAlbum = function(album) {
+    //#1
+    albumTitle = document.getElementsByClassName('album-view-title') [0];
+    albumArtist = document.getElementsByClassName('album-view-artist')[0];
+    albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+    albumImage = document.getElementsByClassName('album-cover-art')[0];
+    albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 }
     //2
     albumTitle.firstChild.nodeValue = album.title;
@@ -66,3 +87,14 @@ var setCurrentAlbum = function(album) {
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
 };
+
+var albums = [albumPicasso, albumMarconi, albumTheThirds];
+var index = 1;
+albumImage.addEventListener("click", function(event) {
+    setCurrentAlbum(albums[index]);
+    index++;
+    if (index == albums.length) {
+        index = 0;
+    }
+    
+});
