@@ -42,17 +42,17 @@ var albumTheThirds = {
     ]
 }
 
-var createSongRow = function(songNumber, songName, songLength) {
-    var template =
+ var createSongRow = function(songNumber, songName, songLength) {
+     var template =
         '<tr class="album-view-song-item">'
-    +   '<td class="song-item-number">' + songNumber + '</td>'
-    +   '<td class="song-item-title">' + songName + '</td>'
-    +   '<td class="song-item-duration">' + songLength + '</td>'
-    +   '</tr>'
-    ;
-    
-    return template;
-}
+      + '  <td class="song-item-number">' + songNumber + '</td>'
+      + '  <td class="song-item-title">' + songName + '</td>'
+      + '  <td class="song-item-duration">' + songLength + '</td>'
+      + '</tr>'
+      ;
+ 
+     return template;
+ };
     
 var albumTitle = document.getElementsByClassName('album-view-title') [0];
     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
@@ -62,14 +62,6 @@ var albumTitle = document.getElementsByClassName('album-view-title') [0];
 
 
 var setCurrentAlbum = function(album) {
-    //#1
-    albumTitle = document.getElementsByClassName('album-view-title') [0];
-    albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-    albumImage = document.getElementsByClassName('album-cover-art')[0];
-    albumSongList = document.getElementsByClassName('album-view-song-list')[0];
-}
-    //2
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
     albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
@@ -81,6 +73,7 @@ var setCurrentAlbum = function(album) {
     //4
     for (var i = 0; i < album.songs.length; i++) {
         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+    }
     };
 
 window.onload = function() {
