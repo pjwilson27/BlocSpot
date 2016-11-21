@@ -71,6 +71,11 @@ var findParentByClassName = function(element, targetClass) {
         }
         return currentParent;
     }
+    if(currentParent = false){
+        alert("No parent found");
+        } else {
+            alert("No parent found with that class name");
+        }
 };
 
 var getSongItem = function(element) {
