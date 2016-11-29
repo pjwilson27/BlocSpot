@@ -10,7 +10,7 @@ var revealPoint = function() {
 
 $.each($('.point'), revealPoint);
 
-$(window).load(function()){
+$(window).load(function() {
     if($(window).height() >950){
     animatePoints();
     }
@@ -22,4 +22,4 @@ var scrollDistance = $('.selling-points').offset().top - $(window).height() + 20
             animatePoints();
         }
     });
-}
+});
