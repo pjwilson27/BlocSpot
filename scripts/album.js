@@ -31,13 +31,13 @@ var createSongRow = function(songNumber, songName, songLength) {
             setSong = songNumber;
             setSong = currentAlbum.songs[songNumber - 1];
             updatePlayerBarSong();
+            
         } else if (setSong === songNumber) {
             $(this).html(playButtonTemplate);
             $('.main-controls .play-pause').html(playerBarPlayButton);
             setSong = null;
-            setSong = null;
+            
         }
-        };
     };
     
     var onHover = function(event) {
@@ -50,7 +50,7 @@ var createSongRow = function(songNumber, songName, songLength) {
     };
     
     var offHover = function(Event) {
-        var songNumberCell = $(this).find('song-item-number');
+        var songNumberCell = $(this).find('.song-item-number');
         var songNumber = parseInt(songNumberCell.attr('data-song-number'));
         
         if(songNumber !== setSong) {
@@ -115,7 +115,7 @@ var nextSong = function() {
     
     $('.currently-playing .song-name').text(setSong.title);
     $('.currently-playing .artist-name').text(currentAlbum.artist);
-    $('.currently-playing .artist-song-mobile').text(setSong + " - " currentAlbum.title);
+    $('.currently-playing .artist-song-mobile').text(setSong + " - " + currentAlbum.title);
     $('.main-controls .play-pause').html(playerBarPauseButton);
     
     var lastSongNumber = getLastSongNumber(currentSongIndex);
@@ -129,7 +129,7 @@ var nextSong = function() {
 var updatePlayerBarSong = function() {
     $('.currently-playing .song-name').text(setSong.title);
     $('.currently-playing .artist-name').text(currentAlbum.artist);
-    $('currently-playing .artist-song-mobile').text(setSong.title + " - " currentAlbum.artist);
+    $('currently-playing .artist-song-mobile').text(setSong.title + " - " + currentAlbum.artist);
     $('.main-controls .play-pause').html(playerBarPauseButton);
 };
 
@@ -164,9 +164,9 @@ var previousSong = function() {
     
 };
 
-var playButtonTemplate = '<a class="album-song-button"><span class="ion-play></span></a>';
+var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
-var playerBarPlayButton = '<span class="ion-play'></span>';
+var playerBarPlayButton = '<span class="ion-play"></span>';
 var playerBarPauseButton = '<span class="ion-pause"></span>';
 
 
