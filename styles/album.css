@@ -31,7 +31,7 @@ body.album {
 }
 
 .album-view-details .album-view-release-info {
-    font-size: 300;
+    font-weight: 300;
     font-size: 0.75rem;
 }
 
@@ -89,7 +89,7 @@ body.album {
     .album-view-details {
         text-align: center;
     }
-    
+
     .album-view-title {
         margin-top: 0;
     }
