@@ -162,6 +162,24 @@ var updatePlayerBarSong = function() {
     $('.main-controls .play-pause').html(playerBarPauseButton);
 };
 
+//assignment20
+
+var playPauseBar = $('.main-controls .play-pause');
+
+var togglePlayFromPlayerBar = function() {
+    if(currentSoundFile.play) {
+        $(this).html(playButtonTemplate);
+        playPauseBar.html(playerBarPlayButton);
+        currentSoundFile.pause();
+    } else {
+        $(this).html(pauseButtonTemplate);
+        playPauseBar.html(playerBarPauseButton);
+        currentSoundFile.play();
+    }
+};
+
+//end assginment20
+
 var previousSong = function() {
     
 
@@ -217,4 +235,5 @@ $(document).ready(function() {
     setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+    playPauseBar.click(togglePlayFromPlayerBar);
 });  
