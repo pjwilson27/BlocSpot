@@ -128,6 +128,24 @@ var setCurrentAlbum = function(album) {
 };
 
  var updateSeekBarWhileSongPlays = function() {
+     //assignment21
+     //#1 of A21
+     var setCurrentTimeInPlayerBar = function(currentTime) {
+         //set .current-time to the current time in the song
+     }
+     //#2 of A21
+     var setTotalTimeInPlayerBar = function(totalTime) {
+         //set .total-time to the length of the song
+     }
+     //#3 of A21
+     var filterTimeCode = function(timeInSeconds) {
+         //Use parseFloat() to get seconds in number form
+         //store variables for whole seconds and minutes
+         //return time in X:XX format
+     }
+     //DONT FORGET TO DO PART 4 AND 5 OF ASSIGNMENT AS WELL
+     // End of assignment21
+     
      if (currentSoundFile) {
          // #10
          currentSoundFile.bind('timeupdate', function(event) {
